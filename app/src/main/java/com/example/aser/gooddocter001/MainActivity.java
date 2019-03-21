@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
     }
+    //Test run
     public void opensignup(View view)
     {
         Intent intent = new Intent(this, SignUp.class);
