@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.aser.gooddocter001.SignUp"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/blue"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:src="@drawable/logo"
+            android:layout_weight="1"
+            />
+
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Good Docter"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@android:color/background_light"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/mylogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="First Name"
+        android:textColorHint="@color/blue"
+        android:backgroundTint="@color/blue"
+        android:inputType="textMultiLine"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"/>
+    <EditText
+
+        android:textColorHint="@color/blue"
+        android:backgroundTint="@color/blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Last Name"
+        android:inputType="textMultiLine"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        />
+    <EditText
+
+        android:textColorHint="@color/blue"
+        android:backgroundTint="@color/blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:inputType="textMultiLine"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        />
+
+    <EditText
+
+        android:textColorHint="@color/blue"
+        android:backgroundTint="@color/blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="PASSWORD"
+        android:inputType="textMultiLine"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        />
+    <EditText
+
+        android:textColorHint="@color/blue"
+        android:backgroundTint="@color/blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Re Type PASSWORD"
+        android:inputType="textMultiLine"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@color/blue"
+        android:onClick="opensignup"
+        android:text="Sign Up"
+        android:textColor="#fff"
+        android:layout_marginTop="20dp"
+
+        />
+
+</LinearLayout>
