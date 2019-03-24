@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +38,7 @@ public class DoctersList extends AppCompatActivity {
         ArrayAdapter<Property> adapter = new propertyArrayAdapter(this, 0, rentalProperties);
 
         //Find list view and bind it with the custom adapter
-        ListView listView = (ListView) findViewById(R.id.customListView);
+        final ListView listView = (ListView) findViewById(R.id.customListView);
         listView.setAdapter(adapter);
 
 
@@ -47,8 +48,8 @@ public class DoctersList extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Property property = rentalProperties.get(position);
 
+                Property property = rentalProperties.get(position);
                 Intent intent = new Intent(DoctersList.this, DetailActivity.class);
                 intent.putExtra("streetName", property.getDocterName());
                 intent.putExtra("state", property.getStatus());

@@ -8,17 +8,19 @@
     tools:context="com.example.aser.gooddocter001.homepage">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_marginBottom="40dp"
         android:layout_marginTop="30dp"
+        android:layout_weight="2"
         >
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:src="@drawable/doctor"
-            android:layout_weight="2"/>
+            android:layout_weight="2"
+            android:padding="20dp"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -44,6 +46,11 @@
         </LinearLayout>
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -125,7 +132,8 @@
             android:text="Medical Record"
             android:textAllCaps="true"
             android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:id="@+id/aaaa"/>
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -134,6 +142,21 @@
 
 
 
+    </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
+        android:layout_weight="1">
+
+    <android.support.design.widget.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_navigation"
+        android:id="@+id/navmenu"
+
+         />
     </LinearLayout>
 
 </LinearLayout>
