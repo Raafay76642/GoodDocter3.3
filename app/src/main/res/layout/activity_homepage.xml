@@ -8,155 +8,105 @@
     tools:context="com.example.aser.gooddocter001.homepage">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginBottom="40dp"
-        android:layout_marginTop="30dp"
-        android:layout_weight="2"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="0.5"
+        android:padding="10dp"
         >
+
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:src="@drawable/doctor"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
             android:layout_weight="2"
-            android:padding="20dp"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:orientation="vertical"
-            android:layout_margin="10dp"
-            >
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="User Name"
-                android:textAllCaps="true"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Appointments,Recordes"
-                android:textSize="14sp" />
-
-        </LinearLayout>
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/doctor" />
 
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"
+        android:layout_weight="8"
         android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:background="@drawable/rountcorner"
-        android:layout_margin="10dp"
-        android:onClick="openChooseSpeciality">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:src="@drawable/doctor"
-            android:layout_weight="3"/>
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="Choose Speciality"
-            android:textAllCaps="true"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-        <ImageView
+            android:text="Name"
+            android:textColor="@color/blue"
+            android:paddingLeft="15dp"
+            android:padding="10dp"
+            android:textSize="15sp" />
+        <EditText
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:src="@drawable/next"
-            android:layout_weight="3"/>
-
-
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:background="@drawable/rountcorner"
-        android:layout_margin="10dp">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:src="@drawable/fourm"
-            android:layout_weight="3"/>
-
+            android:layout_height="wrap_content"
+            android:text="Muneeb Ur Rehman"
+            android:textColor="@color/gray"
+            android:paddingLeft="15dp"
+            android:padding="10dp"
+            android:textSize="15sp"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="Fourm"
-            android:textAllCaps="true"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:src="@drawable/next"
-            android:layout_weight="3"/>
-
-
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:background="@drawable/rountcorner"
-        android:layout_margin="10dp">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:src="@drawable/records"
-            android:layout_weight="3"/>
-
+            android:text="Profession"
+            android:textColor="@color/blue"
+            android:paddingLeft="15dp"
+            android:padding="10dp"
+            android:textSize="15sp" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="Medical Record"
-            android:textAllCaps="true"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:id="@+id/aaaa"/>
-        <ImageView
+            android:text="Student"
+            android:textColor="#808080"
+            android:paddingLeft="15dp"
+            android:padding="10dp"
+            android:textSize="15sp"/>
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:src="@drawable/next"
-            android:layout_weight="3"/>
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textColor="@color/blue"
+            android:paddingLeft="15dp"
+            android:padding="10dp"
+            android:textSize="15sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="example@gmail.com"
+            android:textColor="#808080"
+            android:paddingLeft="15dp"
+            android:padding="10dp"
+            android:textSize="15sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textColor="@color/blue"
+            android:paddingLeft="15dp"
+            android:padding="10dp"
+            android:textSize="15sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cardialogy"
+            android:textColor="#808080"
+            android:paddingLeft="15dp"
+            android:padding="10dp"
+            android:textSize="15sp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
 
+</LinearLayout>
 
-
-    </LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="bottom"
-        android:layout_weight="1">
 
     <android.support.design.widget.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:menu="@menu/bottom_navigation"
         android:id="@+id/navmenu"
+        android:layout_gravity="bottom"
 
          />
-    </LinearLayout>
 
 </LinearLayout>
