@@ -15,21 +15,19 @@
         android:layout_marginTop="20dp"
         android:layout_weight="1"
         >
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:src="@drawable/backbutton"
-            android:layout_weight="6"
-            />
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:layout_marginTop="20dp"
             android:text="Choose Speciality"
             android:textAllCaps="true"
             android:textSize="24sp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textColor="@color/gray"/>
 
 
 
@@ -42,12 +40,14 @@
         android:layout_weight="5"
         >
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_margin="10dp"
         >
         <LinearLayout
+            android:layout_marginRight="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -78,6 +78,7 @@
             android:gravity="center"
             android:background="@drawable/rountcorner"
             android:onClick="openDocterList"
+            android:layout_marginLeft="10dp"
             >
             <ImageView
                 android:layout_width="match_parent"
@@ -110,7 +111,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:background="@drawable/rountcorner"
-            android:onClick="openDocterList">
+            android:onClick="openDocterList"
+            android:layout_marginRight="10dp">
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
@@ -133,7 +135,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:background="@drawable/rountcorner"
-            android:onClick="openDocterList">
+            android:onClick="openDocterList"
+            android:layout_marginLeft="10dp">
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
@@ -142,7 +145,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Neauro Sergon"
+                android:text="Neauro Surgeon"
                 android:textAllCaps="true"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -157,7 +160,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_gravity="bottom"
         android:layout_weight="1">
 
         <android.support.design.widget.BottomNavigationView
@@ -165,6 +167,7 @@
             android:layout_height="wrap_content"
             app:menu="@menu/bottom_navigation"
             android:id="@+id/navmenu"
+            android:layout_gravity="bottom"
 
 
             />
