@@ -55,7 +55,7 @@
             android:padding="10dp"
             android:paddingLeft="15dp"
             android:text="Muneeb Ur Rehman"
-            android:textColor="@color/gray"
+
 
             />
         <TextView
@@ -133,7 +133,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Save"
-            android:onClick="editable"
+            android:onClick="uneditable"
             />
         </LinearLayout>
 

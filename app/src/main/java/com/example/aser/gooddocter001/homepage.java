@@ -32,6 +32,7 @@ public class homepage extends AppCompatActivity {
                            openChooseSpeciality();
                             break;
                         case R.id.Record:
+                            KillThisActivity();
                             open_apntmnts();
                             break;
                         case R.id.home:
@@ -64,13 +65,12 @@ public class homepage extends AppCompatActivity {
     }
     public void open_apntmnts()
     {
-        Intent intentdocter = new Intent(this, Apntments.class);
-        startActivity(intentdocter);
+        Intent intentapent = new Intent(this, Apntments.class);
+        startActivity(intentapent);
     }
     public void uneditable()
     {
-        EditText ename;
-        ename = findViewById(R.id.name);
+        EditText ename = findViewById(R.id.name);
         EditText eprof = findViewById(R.id.profession);
         EditText email = findViewById(R.id.email);
         EditText epassword = findViewById(R.id.password);

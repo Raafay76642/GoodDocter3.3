@@ -37,8 +37,8 @@ public class ChooseSpeciality extends AppCompatActivity {
                             openChooseSpeciality();
                             break;
                         case R.id.Record:
-                            Toast.makeText(ChooseSpeciality.this,
-                                    "record", Toast.LENGTH_LONG).show();
+                            KillThisActivity();
+                            open_apntmnts();
                             break;
                         case R.id.home:
                             KillThisActivity();
@@ -66,5 +66,10 @@ public class ChooseSpeciality extends AppCompatActivity {
     {
         Intent intentdocter = new Intent(this, homepage.class);
         startActivity(intentdocter);
+    }
+    public void open_apntmnts()
+    {
+        Intent intentapent = new Intent(this, Apntments.class);
+        startActivity(intentapent);
     }
 }

@@ -7,9 +7,12 @@ import android.app.TimePickerDialog;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import java.util.Calendar;
@@ -18,9 +21,11 @@ import java.util.Date;
 public class DetailActivity extends AppCompatActivity implements
         View.OnClickListener {
 
-    Button btnDatePicker, btnTimePicker;
-    EditText txtDate, txtTime;
+    Button btnDatePicker;
+    TextView txtDate;
     private int mYear, mMonth, mDay, mHour, mMinute;
+    ListView timeSlot;
+    String timeSlotsArray[]={"10:00 PM","10:30 AM ","11:00 PM ","11:30 AM","12:00 PM"};
 
 
     @Override
@@ -29,11 +34,12 @@ public class DetailActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_detail);
 
         btnDatePicker=(Button)findViewById(R.id.btn_date);
-        btnTimePicker=(Button)findViewById(R.id.btn_time);
-        txtDate=(EditText)findViewById(R.id.in_date);
-        txtTime=(EditText)findViewById(R.id.in_time);
+        txtDate=(TextView) findViewById(R.id.in_date);
         btnDatePicker.setOnClickListener(this);
-        btnTimePicker.setOnClickListener(this);
+        timeSlot = findViewById(R.id.timeScheduleList);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.time_slots_layout_design, R.id.textView, timeSlotsArray);
+        timeSlot.setAdapter(arrayAdapter);
+
 
 
     }
@@ -67,27 +73,11 @@ public class DetailActivity extends AppCompatActivity implements
             datePickerDialog.show();
 
         }
-        if (v == btnTimePicker) {
 
-            // Get Current Time
-            final Calendar c = Calendar.getInstance();
-            mHour = c.get(Calendar.HOUR_OF_DAY);
-            mMinute = c.get(Calendar.MINUTE);
 
-            // Launch Time Picker Dialog
-            TimePickerDialog timePickerDialog = new TimePickerDialog(this,
-                    new TimePickerDialog.OnTimeSetListener() {
 
-                        @Override
-                        public void onTimeSet(TimePicker view, int hourOfDay,
-                                              int minute) {
-
-                            txtTime.setText(hourOfDay + ":" + minute);
-                        }
-                    }, mHour, mMinute, false);
-            timePickerDialog.show();
-        }
     }
+
 
 
 }
