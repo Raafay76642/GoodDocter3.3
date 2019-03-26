@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
         <item
-            android:id="@+id/home"
+            android:id="@+id/welcome"
             android:icon="@drawable/doctor"
+            android:title="Welcome"/>
+
+        <item
+            android:id="@+id/profile"
+            android:icon="@drawable/records"
             android:title="Profile"/>
 
         <item
-            android:id="@+id/Category"
-            android:icon="@drawable/records"
-            android:title="Category"/>
-
-        <item
-            android:id="@+id/Record"
+            android:id="@+id/appointments"
             android:icon="@drawable/records"
             android:title="Appointments"/>
 

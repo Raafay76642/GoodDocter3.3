@@ -94,13 +94,6 @@
         >
 
         <Button
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/facebook"
-            android:layout_marginRight="20sp"/>
-
-        <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/google" />

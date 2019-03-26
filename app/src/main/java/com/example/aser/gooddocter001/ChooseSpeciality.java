@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 public class ChooseSpeciality extends AppCompatActivity {
 
@@ -16,7 +15,7 @@ public class ChooseSpeciality extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_speciality);
         BottomNavigationView bottomnav =findViewById(R.id.navmenu);
-        bottomnav.setSelectedItemId(R.id.Category);
+        bottomnav.setSelectedItemId(R.id.profile);
         bottomnav.setOnNavigationItemSelectedListener(navlistner);
 
 
@@ -33,14 +32,14 @@ public class ChooseSpeciality extends AppCompatActivity {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     switch (item.getItemId()){
-                        case R.id.Category:
+                        case R.id.profile:
                             openChooseSpeciality();
                             break;
-                        case R.id.Record:
+                        case R.id.appointments:
                             KillThisActivity();
                             open_apntmnts();
                             break;
-                        case R.id.home:
+                        case R.id.welcome:
                             KillThisActivity();
                             openhome();
 

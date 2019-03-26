@@ -18,7 +18,7 @@ public class homepage extends AppCompatActivity {
         setContentView(R.layout.activity_homepage);
         BottomNavigationView bottomnav =findViewById(R.id.navmenu);
         bottomnav.setOnNavigationItemSelectedListener(navlistner);
-        uneditable();
+       ;
     }
     private BottomNavigationView.OnNavigationItemSelectedListener navlistner =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -27,15 +27,15 @@ public class homepage extends AppCompatActivity {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     switch (item.getItemId()){
-                        case R.id.Category:
+                        case R.id.profile:
                             KillThisActivity();
-                           openChooseSpeciality();
+                           openprofile();
                             break;
-                        case R.id.Record:
+                        case R.id.appointments:
                             KillThisActivity();
                             open_apntmnts();
                             break;
-                        case R.id.home:
+                        case R.id.welcome:
                             openhome();
                             break;
                     }
@@ -44,14 +44,10 @@ public class homepage extends AppCompatActivity {
 
             };
 
-    public void openChooseSpeciality(View view)
+
+    public void openprofile()
     {
-        Intent intentdocter = new Intent(this, ChooseSpeciality.class);
-        startActivity(intentdocter);
-    }
-    public void openChooseSpeciality()
-    {
-        Intent intentdocter = new Intent(this, ChooseSpeciality.class);
+        Intent intentdocter = new Intent(this, Profile.class);
         startActivity(intentdocter);
     }
     public void openhome()
@@ -68,38 +64,10 @@ public class homepage extends AppCompatActivity {
         Intent intentapent = new Intent(this, Apntments.class);
         startActivity(intentapent);
     }
-    public void uneditable()
-    {
-        EditText ename = findViewById(R.id.name);
-        EditText eprof = findViewById(R.id.profession);
-        EditText email = findViewById(R.id.email);
-        EditText epassword = findViewById(R.id.password);
-        ename.setEnabled(false);
-        eprof.setEnabled(false);
-        email.setEnabled(false);
-        epassword.setEnabled(false);
-    }
-    public void uneditable(View view)
-    {
-        EditText ename = findViewById(R.id.name);
-        EditText eprof = findViewById(R.id.profession);
-        EditText email = findViewById(R.id.email);
-        EditText epassword = findViewById(R.id.password);
-        ename.setEnabled(false);
-        eprof.setEnabled(false);
-        email.setEnabled(false);
-        epassword.setEnabled(false);
-    }
-    public void editable(View view)
-    {
-        EditText ename = findViewById(R.id.name);
-        EditText eprof = findViewById(R.id.profession);
-        EditText email = findViewById(R.id.email);
-        EditText epassword = findViewById(R.id.password);
-        ename.setEnabled(true);
-        eprof.setEnabled(true);
-        email.setEnabled(true);
-        epassword.setEnabled(true);
-    }
 
+
+    public void openChooseSpeciality(View view) {
+        Intent intentdocter = new Intent(this, ChooseSpeciality.class);
+        startActivity(intentdocter);
+    }
 }
