@@ -3,9 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp">
-
+   android:padding="20dp">
+    <RelativeLayout
+        android:background="@drawable/rountcorner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
     <ImageView
         android:id="@+id/image"
         android:layout_width="100dp"
@@ -27,10 +30,12 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:text="Street Address"
-            android:background="#CC0033"
+            android:backgroundTint="#CC0033"
             android:textColor="#ffffff"
             android:padding="10px"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:background="@drawable/rountcorner"
+            />
 
         <TextView
             android:id="@+id/description"
@@ -41,26 +46,27 @@
             android:textSize="15sp" />
     </LinearLayout>
 
-    <RelativeLayout
-        android:id="@+id/pricingSection"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/infoSection"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/price"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/pricingSection"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="#CC0033"
-            android:textColor="#ffffff"
-            android:padding="5dp"
-            android:text="Price" />
+            android:layout_below="@+id/infoSection"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="#CC0033"
+                android:padding="5dp"
+                android:gravity="bottom"
+                android:text="Price"
+                android:textColor="#ffffff" />
 
 
-
-
+        </RelativeLayout>
     </RelativeLayout>
 
 </RelativeLayout>
