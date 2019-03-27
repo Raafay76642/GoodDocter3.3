@@ -10,99 +10,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-<<<<<<< Updated upstream
         android:layout_marginLeft="20dp"
         android:layout_marginTop="50dp"
         android:layout_weight="0.10">
-        <LinearLayout
-=======
-        android:layout_marginBottom="20dp"
-        android:layout_weight="0.5"
-        android:padding="10dp"
-        >
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_weight="2"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/doctor" />
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="8"
-        android:orientation="vertical">
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome back"
+            android:textSize="20sp"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Name"
-            android:textColor="@color/blue"
-            android:paddingLeft="15dp"
-            android:padding="10dp"
-            android:textSize="15sp" />
-
-        <EditText
-            android:id="@+id/name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:padding="10dp"
-            android:paddingLeft="15dp"
-            android:text="Muneeb Ur Rehman"
-
-
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Profession"
-            android:textColor="@color/blue"
-            android:paddingLeft="15dp"
-            android:padding="10dp"
-            android:textSize="15sp" />
-
-        <EditText
-            android:id="@+id/profession"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="none"
-            android:padding="10dp"
-            android:paddingLeft="15dp"
-            android:text="Student"
-            android:textColor="#808080"
-            android:textSize="15sp" />
-        <TextView
->>>>>>> Stashed changes
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Welcome back"
-                android:textSize="20sp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="User Name,"
-                android:layout_marginLeft="3dp"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
-
-<<<<<<< Updated upstream
-        </LinearLayout>
+            android:text="User Name,"
+            android:layout_marginLeft="3dp"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -115,27 +38,8 @@
         android:orientation="vertical"
         android:layout_weight="3"
         android:layout_gravity="center"
-        android:layout_marginTop="100dp">
-=======
-        <EditText
-            android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="none|textEmailAddress"
-            android:padding="10dp"
-            android:paddingLeft="15dp"
-            android:text="example@gmail.com"
-            android:textColor="#808080"
-            android:textSize="15sp" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Department"
-            android:textColor="@color/blue"
-            android:paddingLeft="15dp"
-            android:padding="10dp"
-            android:textSize="15sp" />
->>>>>>> Stashed changes
+        android:layout_marginTop="100dp"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -201,7 +105,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="logout"/>
+            android:text="logout"
+            android:background="@drawable/rountcorner"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/blue"/>
     </LinearLayout>
 
     <android.support.design.widget.BottomNavigationView
