@@ -34,10 +34,10 @@
 
 
     <EditText
-        android:id="@+id/mylogin"
+        android:id="@+id/eeid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="User Name/Email"
+        android:hint="Email"
         android:textColorHint="@color/blue"
         android:backgroundTint="@color/blue"
         android:inputType="textMultiLine"
@@ -45,12 +45,12 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"/>
     <EditText
-        android:id="@+id/Mypassword"
+        android:id="@+id/epassword"
         android:textColorHint="@color/blue"
         android:backgroundTint="@color/blue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="PASSWORD"
+        android:hint="Password"
         android:inputType="textMultiLine"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
@@ -63,6 +63,7 @@
         android:background="@color/blue"
         android:onClick="openHomePage"
         android:text="login"
+        android:id="@+id/blogin"
         android:layout_marginTop="20dp"
 
 

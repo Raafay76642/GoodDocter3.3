@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "807177193275",
+    "firebase_url": "https://gooddoctor-e334f.firebaseio.com",
+    "project_id": "gooddoctor-e334f",
+    "storage_bucket": "gooddoctor-e334f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:807177193275:android:3122ef80d216bf65",
+        "android_client_info": {
+          "package_name": "com.example.aser.gooddocter001"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "807177193275-kropnsggsjvnh9l2e028vko7f3u0tc47.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aser.gooddocter001",
+            "certificate_hash": "a7b60df4f065340223f081055381dbcf451a71e8"
+          }
+        },
+        {
+          "client_id": "807177193275-mhqj135b6aeg6cehejs2167146sshia2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARdUxF7ktUpa2yRyxkHR3_MqJYsmgoxM8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "807177193275-mhqj135b6aeg6cehejs2167146sshia2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
