@@ -9,16 +9,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class homepage extends AppCompatActivity {
 
-
+    private FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
         BottomNavigationView bottomnav =findViewById(R.id.navmenu);
         bottomnav.setOnNavigationItemSelectedListener(navlistner);
-       ;
+        firebaseAuth = FirebaseAuth.getInstance();
     }
     private BottomNavigationView.OnNavigationItemSelectedListener navlistner =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -69,5 +71,11 @@ public class homepage extends AppCompatActivity {
     public void openChooseSpeciality(View view) {
         Intent intentdocter = new Intent(this, ChooseSpeciality.class);
         startActivity(intentdocter);
+    }
+    public void logout(View view)
+    {
+        firebaseAuth.signOut();
+        finish();
+        startActivity(new Intent(this,MainActivity.class) );
     }
 }

@@ -196,6 +196,12 @@
                 android:src="@drawable/next"
                 android:layout_weight="3"/>
         </LinearLayout>
+        <Button
+            android:onClick="logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="logout"/>
     </LinearLayout>
 
     <android.support.design.widget.BottomNavigationView
