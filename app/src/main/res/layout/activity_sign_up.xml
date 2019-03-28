@@ -39,39 +39,39 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_marginTop="60dp">
+
     <EditText
         android:id="@+id/email"
-        android:textColorHint="@color/blue"
-        android:backgroundTint="@color/blue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
-        android:inputType="textMultiLine"
-        android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        />
+        android:layout_marginRight="20dp"
+        android:backgroundTint="@color/blue"
+        android:hint="Email"
+        android:inputType="textMultiLine|textEmailAddress"
+        android:textColorHint="@color/blue" />
 
     <EditText
         android:id="@+id/password"
-        android:textColorHint="@color/blue"
-        android:backgroundTint="@color/blue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="@color/blue"
         android:hint="PASSWORD"
-        android:inputType="textMultiLine"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        />
+        android:inputType="textMultiLine|textPassword"
+        android:textColorHint="@color/blue" />
+
     <EditText
-        android:textColorHint="@color/blue"
-        android:backgroundTint="@color/blue"
+        android:id="@+id/reTypePassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="RE TYPE PASSWORD"
-        android:inputType="textMultiLine"
-        android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        />
+        android:layout_marginRight="20dp"
+        android:backgroundTint="@color/blue"
+        android:hint="RE TYPE PASSWORD"
+        android:inputType="textMultiLine|textPassword"
+        android:textColorHint="@color/blue" />
 
     <Button
         android:onClick="registerUser"
