@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
 
 public class Profile extends AppCompatActivity {
@@ -13,6 +14,8 @@ public class Profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         uneditable();
+        getWindow().setSoftInputMode(
+                WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
     public void openChooseSpeciality(View view)
     {
@@ -52,5 +55,16 @@ public class Profile extends AppCompatActivity {
         eprof.setEnabled(true);
         email.setEnabled(true);
         epassword.setEnabled(true);
+    }
+    public void open_homepage(){
+        Intent intentdocter = new Intent(this, homepage.class);
+        startActivity(intentdocter);
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        open_homepage();
+        super.onBackPressed();
     }
 }

@@ -40,7 +40,7 @@
         android:hint="Email"
         android:textColorHint="@color/blue"
         android:backgroundTint="@color/blue"
-        android:inputType="textMultiLine"
+        android:inputType="textWebEmailAddress"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"/>
@@ -51,7 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
-        android:inputType="textMultiLine"
+        android:inputType="textWebPassword"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
         />
