@@ -6,10 +6,12 @@
     tools:context=".Booked_apntments">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <Button
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/hello_blank_fragment"
-        android:id="@+id/tt1"/>
+        android:id="@+id/btt1"
+        android:background="@drawable/rountcorner"
+        />
 
 </FrameLayout>
