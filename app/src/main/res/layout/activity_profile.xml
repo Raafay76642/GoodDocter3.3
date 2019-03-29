@@ -55,20 +55,18 @@
                     android:padding="10dp"
                     android:paddingLeft="15dp"
                     android:text="Muneeb Ur Rehman"
-
-
                     />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Profession"
+                    android:text="Gender"
                     android:textColor="@color/blue"
                     android:paddingLeft="15dp"
                     android:padding="10dp"
                     android:textSize="15sp" />
 
                 <EditText
-                    android:id="@+id/profession"
+                    android:id="@+id/gender"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="none"
@@ -80,14 +78,14 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Email"
+                    android:text="City"
                     android:textColor="@color/blue"
                     android:paddingLeft="15dp"
                     android:padding="10dp"
                     android:textSize="15sp" />
 
                 <EditText
-                    android:id="@+id/email"
+                    android:id="@+id/city"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="none"
@@ -99,14 +97,33 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Gender"
+                    android:text="Countery"
                     android:textColor="@color/blue"
                     android:paddingLeft="15dp"
                     android:padding="10dp"
                     android:textSize="15sp" />
 
                 <EditText
-                    android:id="@+id/password"
+                    android:id="@+id/countery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:padding="10dp"
+                    android:paddingLeft="15dp"
+                    android:text="Cardialogy"
+                    android:textColor="#808080"
+                    android:textSize="15sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Age"
+                    android:textColor="@color/blue"
+                    android:paddingLeft="15dp"
+                    android:padding="10dp"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/age"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="none"

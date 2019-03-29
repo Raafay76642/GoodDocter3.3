@@ -37,24 +37,24 @@
         android:id="@+id/lmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
-        android:backgroundTint="@color/blue"
         android:hint="Email"
-        android:inputType="textMultiLine|textEmailAddress"
-        android:textColorHint="@color/blue" />
-
+        android:textColorHint="@color/blue"
+        android:backgroundTint="@color/blue"
+        android:inputType="textMultiLine"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"/>
     <EditText
         android:id="@+id/lpassword"
+        android:textColorHint="@color/blue"
+        android:backgroundTint="@color/blue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:backgroundTint="@color/blue"
         android:hint="Password"
-        android:inputType="textMultiLine|textPassword"
-        android:textColorHint="@color/blue" />
+        android:inputType="textMultiLine"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        />
 
     <Button
         android:layout_width="250dp"
@@ -88,7 +88,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Forget Password"
+        android:text="Forget Passowrd?"
         android:textColor="@color/blue"
         android:onClick="resetPassword"
         android:layout_gravity="center"

@@ -8,63 +8,64 @@ import android.view.WindowManager;
 import android.widget.EditText;
 
 public class Profile extends AppCompatActivity {
+    EditText name,gender,city,country,age;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        name = findViewById(R.id.name);
+        gender = findViewById(R.id.gender);
+        city = findViewById(R.id.city);
+        country = findViewById(R.id.countery);
+        age = findViewById(R.id.age);
         uneditable();
-        getWindow().setSoftInputMode(
-                WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
     }
-    public void openChooseSpeciality(View view)
+
+
+    public void addProfile(View view)
     {
-        Intent intentdocter = new Intent(this, ChooseSpeciality.class);
-        startActivity(intentdocter);
+        String Name = name.getText().toString();
+        String Gender = gender.getText().toString();
+        String City = city.getText().toString();
+        String Country = country.getText().toString();
+        String Age = age.getText().toString();
+
     }
+
+
+
+
 
     public void uneditable()
     {
-        EditText ename = findViewById(R.id.name);
-        EditText eprof = findViewById(R.id.profession);
-        EditText email = findViewById(R.id.email);
-        EditText epassword = findViewById(R.id.password);
-        ename.setEnabled(false);
-        eprof.setEnabled(false);
-        email.setEnabled(false);
-        epassword.setEnabled(false);
+        name.setEnabled(false);
+        gender.setEnabled(false);
+        city.setEnabled(false);
+        country.setEnabled(false);
+        age.setEnabled(false);
     }
     public void uneditable(View view)
     {
-        EditText ename = findViewById(R.id.name);
-        EditText eprof = findViewById(R.id.profession);
-        EditText email = findViewById(R.id.email);
-        EditText epassword = findViewById(R.id.password);
-        ename.setEnabled(false);
-        eprof.setEnabled(false);
-        email.setEnabled(false);
-        epassword.setEnabled(false);
+
+        name.setEnabled(false);
+        gender.setEnabled(false);
+        city.setEnabled(false);
+        country.setEnabled(false);
+        age.setEnabled(false);
     }
     public void editable(View view)
     {
-        EditText ename = findViewById(R.id.name);
-        EditText eprof = findViewById(R.id.profession);
-        EditText email = findViewById(R.id.email);
-        EditText epassword = findViewById(R.id.password);
-        ename.setEnabled(true);
-        eprof.setEnabled(true);
-        email.setEnabled(true);
-        epassword.setEnabled(true);
-    }
-    public void open_homepage(){
-        Intent intentdocter = new Intent(this, homepage.class);
-        startActivity(intentdocter);
-
+        name.setEnabled(true);
+        gender.setEnabled(true);
+        city.setEnabled(true);
+        country.setEnabled(true);
+        age.setEnabled(true);
     }
 
-    @Override
-    public void onBackPressed() {
-        open_homepage();
-        super.onBackPressed();
-    }
+
+
+
 }
