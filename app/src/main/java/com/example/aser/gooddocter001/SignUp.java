@@ -22,6 +22,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
     private Button signupbtn;
     private EditText editTextEmail;
     private EditText editTextPass;
+    private EditText editTextRePass;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
 
@@ -32,6 +33,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         signupbtn = findViewById(R.id.signupbtn);
         editTextEmail = findViewById(R.id.email);
         editTextPass = findViewById(R.id.password);
+        editTextRePass=findViewById(R.id.reTypePassword);
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
     }
@@ -45,6 +47,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
     {
         String email = editTextEmail.getText().toString().trim();
         String pass = editTextPass.getText().toString().trim();
+        String repass = editTextRePass.getText().toString().trim();
         if(TextUtils.isEmpty(email))
         {
             //email is empty
@@ -55,6 +58,11 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         {
             //email is empty
             Toast.makeText(this,"Enter the Password",Toast.LENGTH_LONG).show();
+            return;
+        }
+        if (!pass.equals(repass))
+        {
+            Toast.makeText(this,"Password Does Not Match",Toast.LENGTH_LONG).show();
             return;
         }
         //both the edit text are not empty

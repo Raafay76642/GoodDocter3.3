@@ -3,4 +3,17 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <array name="counteryName" >
+        <item>Pakistan</item>
+        <item>Ethopia</item>
+        <item>India</item>
+        <item>USA</item>
+        <item>UK</item>
+        <item>UAE</item>
+    </array>
+    <array name="Gender">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </array>
 </resources>

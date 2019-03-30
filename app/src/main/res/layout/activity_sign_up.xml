@@ -48,30 +48,30 @@
         android:layout_marginRight="20dp"
         android:backgroundTint="@color/blue"
         android:hint="Email"
-        android:inputType="textWebEmailAddress"
+        android:inputType="textMultiLine|textEmailAddress"
         android:textColorHint="@color/blue" />
 
     <EditText
         android:id="@+id/password"
-        android:textColorHint="@color/blue"
-        android:backgroundTint="@color/blue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textWebPassword"
-        android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        />
+        android:layout_marginRight="20dp"
+        android:backgroundTint="@color/blue"
+        android:hint="PASSWORD"
+        android:inputType="textMultiLine|textPassword"
+        android:textColorHint="@color/blue" />
+
     <EditText
-        android:textColorHint="@color/blue"
-        android:backgroundTint="@color/blue"
+        android:id="@+id/reTypePassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Re-type Password"
-        android:inputType="textWebPassword"
-        android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        />
+        android:layout_marginRight="20dp"
+        android:backgroundTint="@color/blue"
+        android:hint="RE TYPE PASSWORD"
+        android:inputType="textMultiLine|textPassword"
+        android:textColorHint="@color/blue" />
 
     <Button
         android:onClick="registerUser"
@@ -104,5 +104,6 @@
             android:onClick="opensignin"
             />
 </LinearLayout>
+
 </LinearLayout>
 </LinearLayout>

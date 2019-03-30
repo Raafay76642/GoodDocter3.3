@@ -23,6 +23,58 @@
           }
         },
         {
+          "client_id": "807177193275-hpsq03p9f8fe7t7i59dhd5pv29d8q3oh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aser.gooddocter001",
+            "certificate_hash": "11959bb9439ae8eb31897fd4e9644b19a3ad036b"
+          }
+        },
+        {
+          "client_id": "807177193275-mhqj135b6aeg6cehejs2167146sshia2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARdUxF7ktUpa2yRyxkHR3_MqJYsmgoxM8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "807177193275-mhqj135b6aeg6cehejs2167146sshia2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:807177193275:android:723a5c6abb6d15c8",
+        "android_client_info": {
+          "package_name": "online.bcasino.pbonus.review.adminapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "807177193275-2iu844dja9nnigfqt0tftuuf8cjc2eci.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "online.bcasino.pbonus.review.adminapp",
+            "certificate_hash": "a7b60df4f065340223f081055381dbcf451a71e8"
+          }
+        },
+        {
           "client_id": "807177193275-mhqj135b6aeg6cehejs2167146sshia2.apps.googleusercontent.com",
           "client_type": 3
         }

@@ -3,10 +3,12 @@ package com.example.aser.gooddocter001;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.nfc.Tag;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -75,14 +77,48 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 progressDialog.dismiss();
-                if(task.isSuccessful())
-                {finish();
+                if (task.isSuccessful()) {
+                    finish();
                     openHomePage();
+                } else {
+
+                        final String TAG = SignUp.class.getName();
+                        Log.w(TAG, "signInWithEmail:failed", task.getException());
+                        Toast.makeText(MainActivity.this, "User Authentication Failed: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+
                 }
+
 
 
             }
         });
+
+    }
+    public void resetPassword(View view)
+    {
+        String Email = lEi.getText().toString().trim();
+        if(TextUtils.isEmpty(Email))
+        {
+            //email is empty
+            Toast.makeText(this,"Please Enter the Email To Reset Your Password",Toast.LENGTH_LONG).show();
+            return;
+        }
+        progressDialog.setMessage("Reseting Password ...");
+        progressDialog.show();
+        firebaseAuth.sendPasswordResetEmail(Email)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            progressDialog.dismiss();
+                            Toast.makeText(MainActivity.this,"Password Reset.Check Your Mail",Toast.LENGTH_LONG).show();
+                        }
+                        else {
+                            progressDialog.dismiss();
+                            Toast.makeText(MainActivity.this,"Ooops Something Wrong.Try again",Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
 
     }
 }
