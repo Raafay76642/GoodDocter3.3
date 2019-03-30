@@ -70,7 +70,7 @@ public class Profile extends AppCompatActivity {
         databaseprofile.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                name.setText(dataSnapshot.child("name").getValue().toString());
+             //   name.setText(dataSnapshot.child("name").getValue().toString());
 
             }
 
