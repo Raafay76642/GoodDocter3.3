@@ -1,7 +1,7 @@
 package com.example.aser.gooddocter001;
 
 //Base class to hold information about our property
-public class Property {
+public class Doc_data {
 
     //property basics
 
@@ -12,7 +12,7 @@ public class Property {
     private Boolean Status;
 
     //constructor
-    public Property(
+    public Doc_data(
             String doctorName, String description, Double fee, String image, Boolean status){
 
 

@@ -13,15 +13,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.jar.Attributes;
 
 public class DoctersList extends AppCompatActivity {
 
-    private ArrayList<Property> rentalProperties = new ArrayList<>();
+    private ArrayList<Doc_data> rentalProperties = new ArrayList<>();
     String NameStatus;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +27,13 @@ public class DoctersList extends AppCompatActivity {
         setContentView(R.layout.activity_docters_list);
 
         //create our property elements
-        rentalProperties.add(new Property("Ahmed Riaz","MBBS,FPCS,DErmatologist",500.00,"doctor",true));
-        rentalProperties.add(new Property("Hassan Majeed","MBBS,FPCS,DErmatologist",400.00,"doctor",true));
-        rentalProperties.add(new Property("Muneeb Ur Rehman","MBBS,FPCS,DErmatologist",300.00,"doctor",false));
-        rentalProperties.add(new Property("Shoib Mughal","MBBS,FPCS,DErmatologist",200.00,"doctor",true));
+        rentalProperties.add(new Doc_data("Ahmed Riaz","MBBS,FPCS,DErmatologist",500.00,"doctor",true));
+        rentalProperties.add(new Doc_data("Hassan Majeed","MBBS,FPCS,DErmatologist",400.00,"doctor",true));
+        rentalProperties.add(new Doc_data("Muneeb Ur Rehman","MBBS,FPCS,DErmatologist",300.00,"doctor",false));
+        rentalProperties.add(new Doc_data("Shoib Mughal","MBBS,FPCS,DErmatologist",200.00,"doctor",true));
 
         //create our new array adapter
-        ArrayAdapter<Property> adapter = new propertyArrayAdapter(this, 0, rentalProperties);
+        ArrayAdapter<Doc_data> adapter = new propertyArrayAdapter(this, 0, rentalProperties);
 
         //Find list view and bind it with the custom adapter
         final ListView listView = (ListView) findViewById(R.id.customListView);
@@ -49,11 +47,11 @@ public class DoctersList extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
 
-                Property property = rentalProperties.get(position);
+                Doc_data docdata = rentalProperties.get(position);
                 Intent intent = new Intent(DoctersList.this, DetailActivity.class);
-                intent.putExtra("streetName", property.getDocterName());
-                intent.putExtra("state", property.getStatus());
-                intent.putExtra("image", property.getImage());
+                intent.putExtra("streetName", docdata.getDocterName());
+                intent.putExtra("state", docdata.getStatus());
+                intent.putExtra("image", docdata.getImage());
                 startActivityForResult(intent, 1000);
             }
         };
@@ -64,13 +62,13 @@ public class DoctersList extends AppCompatActivity {
     }
 
     //custom ArrayAdapater
-    class propertyArrayAdapter extends ArrayAdapter<Property>{
+    class propertyArrayAdapter extends ArrayAdapter<Doc_data>{
 
         private Context context;
-        private List<Property> rentalProperties;
+        private List<Doc_data> rentalProperties;
 
         //constructor, call on creation
-        public propertyArrayAdapter(Context context, int resource, ArrayList<Property> objects) {
+        public propertyArrayAdapter(Context context, int resource, ArrayList<Doc_data> objects) {
             super(context, resource, objects);
 
             this.context = context;
@@ -80,20 +78,20 @@ public class DoctersList extends AppCompatActivity {
         //called when rendering the list
         public View getView(int position, View convertView, ViewGroup parent) {
 
-            //get the property we are displaying
-            Property property = rentalProperties.get(position);
+            //get the docdata we are displaying
+            Doc_data docdata = rentalProperties.get(position);
 
             //get the inflater and inflate the XML layout for each item
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
 
             //conditionally inflate either standard or special template
             View view;
-            if(property.getStatus() == false){
+            if(docdata.getStatus() == false){
                 view = inflater.inflate(R.layout.property_layout_alt, null);
-                 NameStatus = property.getDocterName()+" "+"(Online)";
+                 NameStatus = docdata.getDocterName()+" "+"(Online)";
             }else{
                 view = inflater.inflate(R.layout.property_layout, null);
-                NameStatus = property.getDocterName()+" "+"(Offline)";
+                NameStatus = docdata.getDocterName()+" "+"(Offline)";
             }
 
             TextView DocterName = (TextView) view.findViewById(R.id.address);
@@ -105,13 +103,13 @@ public class DoctersList extends AppCompatActivity {
             DocterName.setText(NameStatus);
 
             //display  for description
-            description.setText(property.getDescription());
+            description.setText(docdata.getDescription());
 
             //set price and rental attributes
-            price.setText("$" + String.valueOf(property.getFee()));
+            price.setText("$" + String.valueOf(docdata.getFee()));
 
-            //get the image associated with this property
-            int imageID = context.getResources().getIdentifier(property.getImage(), "drawable", context.getPackageName());
+            //get the image associated with this docdata
+            int imageID = context.getResources().getIdentifier(docdata.getImage(), "drawable", context.getPackageName());
             image.setImageResource(imageID);
 
             return view;
