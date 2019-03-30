@@ -51,11 +51,9 @@
                     android:id="@+id/name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="none"
+                    android:inputType="none|textPersonName"
                     android:padding="10dp"
-                    android:paddingLeft="15dp"
-                    android:text="Muneeb Ur Rehman"
-                    />
+                    android:paddingLeft="15dp" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -65,14 +63,14 @@
                     android:padding="10dp"
                     android:textSize="15sp" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/gender"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:entries="@array/Gender"
                     android:inputType="none"
                     android:padding="10dp"
                     android:paddingLeft="15dp"
-                    android:text="Student"
                     android:textColor="#808080"
                     android:textSize="15sp" />
                 <TextView
@@ -88,10 +86,9 @@
                     android:id="@+id/city"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="none"
+                    android:inputType="none|textPersonName"
                     android:padding="10dp"
                     android:paddingLeft="15dp"
-                    android:text="example@gmail.com"
                     android:textColor="#808080"
                     android:textSize="15sp" />
                 <TextView
@@ -103,14 +100,14 @@
                     android:padding="10dp"
                     android:textSize="15sp" />
 
-                <EditText
-                    android:id="@+id/countery"
+                <Spinner
+                    android:id="@+id/country"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:entries="@array/counteryName"
                     android:inputType="none"
                     android:padding="10dp"
                     android:paddingLeft="15dp"
-                    android:text="Cardialogy"
                     android:textColor="#808080"
                     android:textSize="15sp" />
                 <TextView
@@ -126,10 +123,10 @@
                     android:id="@+id/age"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="none"
+                    android:inputType="none|number"
                     android:padding="10dp"
                     android:paddingLeft="15dp"
-                    android:text="Cardialogy"
+
                     android:textColor="#808080"
                     android:textSize="15sp" />
                 <LinearLayout
@@ -150,7 +147,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Save"
-                        android:onClick="uneditable"
+                        android:onClick="saveProfile"
                         />
                 </LinearLayout>
 

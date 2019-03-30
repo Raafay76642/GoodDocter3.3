@@ -81,9 +81,14 @@ public class MainActivity extends AppCompatActivity {
                     finish();
                     openHomePage();
                 } else {
-                    Toast.makeText(MainActivity.this, "Email or Password are not matched.Try Again", Toast.LENGTH_LONG).show();
-                    return;
+
+                        final String TAG = SignUp.class.getName();
+                        Log.w(TAG, "signInWithEmail:failed", task.getException());
+                        Toast.makeText(MainActivity.this, "User Authentication Failed: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+
                 }
+
+
 
             }
         });

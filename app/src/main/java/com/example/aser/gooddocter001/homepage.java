@@ -72,6 +72,10 @@ public class homepage extends AppCompatActivity {
         Intent intentdocter = new Intent(this, ChooseSpeciality.class);
         startActivity(intentdocter);
     }
+    public void openProfile(View view) {
+        Intent intentdocter = new Intent(this, Profile.class);
+        startActivity(intentdocter);
+    }
     public void logout(View view)
     {
         firebaseAuth.signOut();
