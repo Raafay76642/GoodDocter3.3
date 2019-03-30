@@ -21,12 +21,12 @@ public class Calling extends AppCompatActivity implements Connector.IConnect {
         videoFrame = (FrameLayout)findViewById(R.id.videoFrame);
     }
     public void Start(View v) {
-        vc = new Connector(videoFrame, Connector.ConnectorViewStyle.VIDYO_CONNECTORVIEWSTYLE_Default, 15, "warning info@VidyoClient info@VidyoConnector", "", 0);
+        vc = new Connector(videoFrame, Connector.ConnectorViewStyle.VIDYO_CONNECTORVIEWSTYLE_Default, 2, "warning info@VidyoClient info@VidyoConnector", "", 0);
         vc.showViewAt(videoFrame, 0, 0, videoFrame.getWidth(), videoFrame.getHeight());
     }
     public void Connect(View v) {
-        String token = "cHJvdmlzaW9uAHVzZXIyQGZjZmQwOC52aWR5by5pbwA2MzcyMTI1NjYwNQAANTlhN2Q5ZmI4ZWFkM2RkZjNmNGU5MGVlOTg4MzkwODQxNDBjODAyMjBlZjVhN2NiODA0NjlkM2JmNDBhOTZiMGZlNTViY2FhZmY2NWI2Yjc5MzZjMGQ0ZTM0ZDhkYmE0";
-        vc.connect("prod.vidyo.io", token, "DemoUser", "Room", this);
+        String token = "cHJvdmlzaW9uAHVzZXIyQGZjZmQwOC52aWR5by5pbwA2MzcyMTI4MjIwNQAAZWZhM2RhZmJlNjg4OWNkYTBmOTgxNWNhOWUxNzM0YTc1MjA0YWY0NzExMGI4ZmY1Zjk0NzU1MDhjNmZiN2IwNjE2MjMzOTA4ZjRmZjRiN2VmOTZmOTllNjVjNjA5NmJi";
+        vc.connect("prod.vidyo.io", token, "Muneeb", "Room", this);
     }
 
     public void Disconnect(View v) {
