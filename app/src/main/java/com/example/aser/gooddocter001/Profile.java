@@ -51,10 +51,7 @@ public class Profile extends AppCompatActivity {
             databaseprofile.child(Id).setValue(profileModel);
             final Toast toast = Toast.makeText(Profile.this, "Data is Saved", Toast.LENGTH_LONG);
             toast.show();
-
-
         }
-
         else
         {
             final Toast toast = Toast.makeText(Profile.this, "Name Can't Be Blank", Toast.LENGTH_LONG);
@@ -63,23 +60,23 @@ public class Profile extends AppCompatActivity {
 
 
     }
-    @Override
-    public void onStart() {
-        super.onStart();
-        databaseprofile =FirebaseDatabase.getInstance().getReference().child("profile").child("LbCr7fF3wYCiLcoZyIJ");
-        databaseprofile.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-             //   name.setText(dataSnapshot.child("name").getValue().toString());
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        databaseprofile =FirebaseDatabase.getInstance().getReference().child("profile").child("LbCr7fF3wYCiLcoZyIJ");
+//        databaseprofile.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//             //   name.setText(dataSnapshot.child("name").getValue().toString());
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//    }
     public void uneditable(View view)
     {
         name.setEnabled(false);
