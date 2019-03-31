@@ -31,6 +31,7 @@
         <activity android:name=".ChooseSpeciality" />
         <activity android:name=".DoctersList" />
         <activity android:name=".DetailActivity" />
+        <activity android:name=".Calling"/>
     </application>
 
 </manifest>
