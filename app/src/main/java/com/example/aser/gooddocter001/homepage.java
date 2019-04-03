@@ -14,12 +14,13 @@ import com.google.firebase.auth.FirebaseAuth;
 public class homepage extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
+    BottomNavigationView BottomNav;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
-        BottomNavigationView bottomnav =findViewById(R.id.navmenu);
-        bottomnav.setOnNavigationItemSelectedListener(navlistner);
+        BottomNav =findViewById(R.id.navmenu);
+        BottomNav.setOnNavigationItemSelectedListener(navlistner);
         firebaseAuth = FirebaseAuth.getInstance();
     }
     private BottomNavigationView.OnNavigationItemSelectedListener navlistner =

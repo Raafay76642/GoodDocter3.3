@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -19,12 +20,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class Profile extends AppCompatActivity {
-    EditText name,city,age;
+    EditText name,city,age; TextView Test;
     Spinner country,gender;
-    DatabaseReference databaseprofile;
+    DatabaseReference databaseprofile,databasegetdata;
+    String id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         databaseprofile= FirebaseDatabase.getInstance().getReference("profile");
+        databasegetdata= FirebaseDatabase.getInstance().getReference("profile");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         name = findViewById(R.id.name);
@@ -32,6 +35,7 @@ public class Profile extends AppCompatActivity {
         city = findViewById(R.id.city);
         country = findViewById(R.id.country);
         age = findViewById(R.id.age);
+        Test= findViewById(R.id.testText);
         uneditable();
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
@@ -46,9 +50,9 @@ public class Profile extends AppCompatActivity {
         String Country = country.getSelectedItem().toString();
         String Age = age.getText().toString();
         if (!TextUtils.isEmpty(Name)){
-            String Id =databaseprofile.push().getKey();
-            ProfileModel profileModel =new ProfileModel (Name,Gender,City,Country,Age,Id);
-            databaseprofile.child(Id).setValue(profileModel);
+            id =databaseprofile.push().getKey();
+            ProfileModel profileModel =new ProfileModel (Name,Gender,City,Country,Age,id);
+            databaseprofile.child(id).setValue(profileModel);
             final Toast toast = Toast.makeText(Profile.this, "Data is Saved", Toast.LENGTH_LONG);
             toast.show();
         }
@@ -60,23 +64,21 @@ public class Profile extends AppCompatActivity {
 
 
     }
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//        databaseprofile =FirebaseDatabase.getInstance().getReference().child("profile").child("LbCr7fF3wYCiLcoZyIJ");
-//        databaseprofile.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//             //   name.setText(dataSnapshot.child("name").getValue().toString());
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-//    }
+    public void getData(View view) {
+
+        databasegetdata.child("-LbA99friU-hTgnv47pk").child("name").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        String value = dataSnapshot.getValue(String.class);
+                        Test.setText(value);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        Test.setText("Eroor");
+                    }
+                });
+    }
     public void uneditable(View view)
     {
         name.setEnabled(false);
