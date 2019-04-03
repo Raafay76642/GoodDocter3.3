@@ -39,6 +39,7 @@ public class Profile extends AppCompatActivity {
         uneditable();
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
+
     }
 
    public void saveProfile(View view)
@@ -97,8 +98,7 @@ public class Profile extends AppCompatActivity {
         age.setEnabled(false);
     }
 
-    public void editable(View view)
-    {
+    public void editable(View view) {
         name.setEnabled(true);
         gender.setEnabled(true);
         city.setEnabled(true);
@@ -106,7 +106,10 @@ public class Profile extends AppCompatActivity {
         age.setEnabled(true);
     }
 
-
-
-
+    @Override
+    public void onBackPressed() {
+        Intent intent=new Intent(this,homepage.class);
+        startActivity(intent);
+        super.onBackPressed();
+    }
 }
