@@ -1,5 +1,6 @@
 package com.example.aser.gooddocter001;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -31,6 +32,8 @@ public class Calling extends AppCompatActivity implements Connector.IConnect {
 
     public void Disconnect(View v) {
         vc.disconnect();
+        Intent intent=new Intent(this,Apntments.class);
+        startActivity(intent);
     };
     @Override
     public void onSuccess() {
