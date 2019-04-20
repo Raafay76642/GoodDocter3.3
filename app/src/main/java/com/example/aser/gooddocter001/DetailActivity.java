@@ -42,8 +42,8 @@ public class DetailActivity extends AppCompatActivity implements
     ListView timeSlot;
     DatabaseReference mref;
     String key;
-    private List<String> timeSlotlList;
-    ArrayAdapter<String> arrayAdapter;
+   private List<String> timeSlotlList;
+  ArrayAdapter<String> arrayAdapter;
     Query query;
 
 
@@ -64,7 +64,6 @@ public class DetailActivity extends AppCompatActivity implements
         timeSlot.setAdapter(arrayAdapter);
         Intent intent=getIntent();
         key=intent.getStringExtra("key");
-        mref=FirebaseDatabase.getInstance().getReference("Doctors").child(key).child("21:3:2019");
 
 
 
@@ -89,8 +88,39 @@ public class DetailActivity extends AppCompatActivity implements
                         public void onDateSet(DatePicker view, int year,
                                               int monthOfYear, int dayOfMonth) {
 
-                            txtDate.setText(dayOfMonth + ":" + (monthOfYear ) + ":" + year);
+                            String selectedDate = dayOfMonth + ":" + (monthOfYear ) + ":" + year;
+                            txtDate.setText(selectedDate);
                             date=txtDate.getText().toString();
+                            mref=FirebaseDatabase.getInstance().getReference("Doctors").child(key).child(selectedDate);
+                            mref.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+
+                                        String title1 = dataSnapshot.child("slot1").getValue(String.class);
+                                        timeSlotlList.add(title1);
+                                    String title2 = dataSnapshot.child("slot2").getValue(String.class);
+                                    timeSlotlList.add(title2);
+                                    String title3 = dataSnapshot.child("slot3").getValue(String.class);
+                                    timeSlotlList.add(title3);
+                                    String title4 = dataSnapshot.child("slot4").getValue(String.class);
+                                    timeSlotlList.add(title4);
+                                    String title5 = dataSnapshot.child("slot5").getValue(String.class);
+                                    timeSlotlList.add(title5);
+
+                                        arrayAdapter.notifyDataSetChanged();
+
+
+
+
+
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                }
+                            });
 
                         }
                     }, mYear, mMonth, mDay);
@@ -101,21 +131,6 @@ public class DetailActivity extends AppCompatActivity implements
 
         }
 
-       mref.addListenerForSingleValueEvent(new ValueEventListener() {
-           @Override
-           public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-               String z= dataSnapshot.getValue(String.class);
-               timeSlotlList.add(z);
-               arrayAdapter.notifyDataSetChanged();
-
-           }
-
-           @Override
-           public void onCancelled(@NonNull DatabaseError databaseError) {
-
-           }
-       });
 
 
     }
