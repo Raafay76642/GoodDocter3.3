@@ -54,7 +54,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:background="@drawable/rountcorner"
-            android:onClick="openDocterList">
+            android:onClick="doc_list_card">
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
@@ -77,7 +77,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:background="@drawable/rountcorner"
-            android:onClick="openDocterList"
+            android:onClick="doc_list_ortho"
             android:layout_marginLeft="10dp"
             >
             <ImageView
@@ -111,7 +111,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:background="@drawable/rountcorner"
-            android:onClick="openDocterList"
+            android:onClick="doc_list_dent"
             android:layout_marginRight="10dp">
             <ImageView
                 android:layout_width="match_parent"
@@ -135,7 +135,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:background="@drawable/rountcorner"
-            android:onClick="openDocterList"
+            android:onClick="doc_list_neuro"
             android:layout_marginLeft="10dp">
             <ImageView
                 android:layout_width="match_parent"

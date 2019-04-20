@@ -20,11 +20,7 @@ public class ChooseSpeciality extends AppCompatActivity {
 
 
     }
-    public void openDocterList(View view)
-    {
-        Intent intent = new Intent(this, DoctersList.class);
-        startActivity(intent);
-    }
+
     private BottomNavigationView.OnNavigationItemSelectedListener navlistner =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -33,7 +29,7 @@ public class ChooseSpeciality extends AppCompatActivity {
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     switch (item.getItemId()){
                         case R.id.profile:
-                            openChooseSpeciality();
+                            openProfile();
                             break;
                         case R.id.appointments:
                             KillThisActivity();
@@ -56,9 +52,9 @@ public class ChooseSpeciality extends AppCompatActivity {
     }
 
 
-    public void openChooseSpeciality()
+    public void openProfile()
     {
-        Intent intentdocter = new Intent(this, ChooseSpeciality.class);
+        Intent intentdocter = new Intent(this, Profile.class);
         startActivity(intentdocter);
     }
     public void openhome()
@@ -70,5 +66,31 @@ public class ChooseSpeciality extends AppCompatActivity {
     {
         Intent intentapent = new Intent(this, Apntments.class);
         startActivity(intentapent);
+    }
+    public void doc_list_card(View view){
+
+        Intent intent= new Intent(this, DoctersList.class);
+        intent.putExtra("selected","Cardiologist");
+        startActivity(intent);
+    }
+    public void doc_list_dent(View view){
+
+        Intent intent= new Intent(this, DoctersList.class);
+        intent.putExtra("selected","Dentist");
+        startActivity(intent);
+    }
+    public void doc_list_neuro(View view){
+
+        Intent intent= new Intent(this, DoctersList.class);
+        intent.putExtra("selected","Neuro Surgeon");
+        startActivity(intent);
+
+
+    }
+    public void doc_list_ortho(View view){
+
+        Intent intent= new Intent(this, DoctersList.class);
+        intent.putExtra("selected","Orthopedist");
+        startActivity(intent);
     }
 }

@@ -1,19 +1,40 @@
 package com.example.aser.gooddocter001;
 
 public class ProfileModel {
-    String name,gender,city,country,age,id;
-    ProfileModel()
-    {
+    String name;
+    String gender;
+    String country;
+    String age;
+    String id;
+    String email;
+    public String getEmail() {
+        return email;
+    }
 
-    };
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-    public ProfileModel(String name, String gender, String city, String country, String age,String id) {
+
+
+    public ProfileModel(String name, String gender, String country, String age) {
         this.name = name;
         this.gender = gender;
-        this.city = city;
+        this.country = country;
+        this.age = age;
+
+    }
+
+
+
+    public ProfileModel(String name, String gender, String country, String age, String id,String email) {
+        this.name = name;
+        this.gender = gender;
         this.country = country;
         this.age = age;
         this.id = id;
+        this.email=email;
+
     }
 
     public String getName() {
@@ -24,9 +45,6 @@ public class ProfileModel {
         return gender;
     }
 
-    public String getCity() {
-        return city;
-    }
 
     public String getCountry() {
         return country;
@@ -47,9 +65,6 @@ public class ProfileModel {
         this.gender = gender;
     }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
 
     public void setCountry(String country) {
         this.country = country;

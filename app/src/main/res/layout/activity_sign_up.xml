@@ -34,76 +34,160 @@
             android:layout_weight="1"/>
     </LinearLayout>
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_marginTop="60dp">
-
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:backgroundTint="@color/blue"
-        android:hint="Email"
-        android:inputType="textMultiLine|textEmailAddress"
-        android:textColorHint="@color/blue" />
-
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:backgroundTint="@color/blue"
-        android:hint="PASSWORD"
-        android:inputType="textMultiLine|textPassword"
-        android:textColorHint="@color/blue" />
-
-    <EditText
-        android:id="@+id/reTypePassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:backgroundTint="@color/blue"
-        android:hint="RE TYPE PASSWORD"
-        android:inputType="textMultiLine|textPassword"
-        android:textColorHint="@color/blue" />
-
-    <Button
-        android:onClick="registerUser"
-        android:id="@+id/signupbtn"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:background="@color/blue"
-        android:text="Sign Up"
-        android:textColor="#fff"
-        android:layout_marginTop="20dp"
-
-        />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="5dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Already have account?"/>
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
+
+        <EditText
+            android:id="@+id/ename"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SignIn"
-            android:textColor="@color/blue"
-            android:onClick="opensignin"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="@color/blue"
+            android:hint="Full Name"
+            android:inputType="none|textPersonName"
+            android:textColorHint="@color/blue" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:paddingLeft="15dp"
+                android:text="Gender"
+                android:textColor="@color/blue"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:autofillHints="Gender"
+                android:entries="@array/Gender"
+                android:textColor="@color/blue"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:paddingLeft="15dp"
+                android:text="Country"
+                android:textColor="@color/blue"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:autofillHints="Gender"
+                android:entries="@array/counteryName"
+                android:textColor="@color/blue"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/s_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="@color/blue"
+            android:hint="Age"
+            android:inputType="text"
+            android:textColorHint="@color/blue" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="@color/blue"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textColorHint="@color/blue" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="@color/blue"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColorHint="@color/blue" />
+
+        <EditText
+            android:id="@+id/reTypePassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="@color/blue"
+            android:hint="Re-type Password"
+            android:inputType="textPassword"
+            android:textColorHint="@color/blue" />
+
+        <Button
+            android:id="@+id/signupbtn"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@color/blue"
+            android:onClick="registerUser"
+            android:text="Sign Up"
+            android:textColor="#fff"
+
             />
-</LinearLayout>
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Already have account?" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="opensignin"
+                android:text="SignIn"
+                android:textColor="@color/blue" />
+        </LinearLayout>
+
+    </LinearLayout>
 </LinearLayout>

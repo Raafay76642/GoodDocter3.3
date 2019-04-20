@@ -13,6 +13,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -20,72 +21,128 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class Profile extends AppCompatActivity {
-    EditText name,city,age; TextView Test;
+    EditText name,age,email;
     Spinner country,gender;
+    private FirebaseAuth firebaseAuth;
+
     DatabaseReference databaseprofile,databasegetdata;
     String id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        databaseprofile= FirebaseDatabase.getInstance().getReference("profile");
-        databasegetdata= FirebaseDatabase.getInstance().getReference("profile");
+        databaseprofile= FirebaseDatabase.getInstance().getReference("Users");
+        databasegetdata= FirebaseDatabase.getInstance().getReference("Users");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         name = findViewById(R.id.name);
         gender = findViewById(R.id.gender);
-        city = findViewById(R.id.city);
         country = findViewById(R.id.country);
         age = findViewById(R.id.age);
-        Test= findViewById(R.id.testText);
+        email=findViewById(R.id.pemail);
+        firebaseAuth = FirebaseAuth.getInstance();
+
+
         uneditable();
+        getData();
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
 
     }
 
-   public void saveProfile(View view)
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (firebaseAuth.getCurrentUser() != null) {
+            id = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        } else {
+            finish();
+            openlogin();
+        }
+    }
+
+    public void openlogin() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+
+    public void saveProfile(View view)
     {
 
         String Name = name.getText().toString();
         String Gender = gender.getSelectedItem().toString();
-        String City = city.getText().toString();
         String Country = country.getSelectedItem().toString();
         String Age = age.getText().toString();
-        if (!TextUtils.isEmpty(Name)){
-            id =databaseprofile.push().getKey();
-            ProfileModel profileModel =new ProfileModel (Name,Gender,City,Country,Age,id);
+
+            id = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            ProfileModel profileModel =new ProfileModel (Name,Gender,Country,Age);
             databaseprofile.child(id).setValue(profileModel);
             final Toast toast = Toast.makeText(Profile.this, "Data is Saved", Toast.LENGTH_LONG);
             toast.show();
-        }
-        else
-        {
-            final Toast toast = Toast.makeText(Profile.this, "Name Can't Be Blank", Toast.LENGTH_LONG);
-            toast.show();
-        }
+            getData();
+            uneditable();
 
 
     }
-    public void getData(View view) {
+//    public void getData(View view) {
+//
+//        databasegetdata.child(id).child("age").addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                String value = dataSnapshot.getValue(String.class);
+//                age.setText(value);
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//                age.setText("Eroor");
+//            }
+//        });
+//        databasegetdata.child(id).child("name").addValueEventListener(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(DataSnapshot dataSnapshot) {
+//                        String value = dataSnapshot.getValue(String.class);
+//                        name.setText(value);
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(DatabaseError databaseError) {
+//                        name.setText("Eroor");
+//                    }
+//                });
+//    }
+    public void getData() {
+        id = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-        databasegetdata.child("-LbA99friU-hTgnv47pk").child("name").addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        String value = dataSnapshot.getValue(String.class);
-                        Test.setText(value);
-                    }
 
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                        Test.setText("Eroor");
-                    }
-                });
+        databasegetdata.child(id).child("age").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String value = dataSnapshot.getValue(String.class);
+                age.setText(value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                age.setText("Eroor");
+            }
+        });
+        databasegetdata.child(id).child("name").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String value = dataSnapshot.getValue(String.class);
+                name.setText(value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                name.setText("Eroor");
+            }
+        });
     }
     public void uneditable(View view)
     {
         name.setEnabled(false);
-        gender.setEnabled(false);
-        city.setEnabled(false);
-        country.setEnabled(false);
         age.setEnabled(false);
     }
     public void uneditable()
@@ -93,16 +150,13 @@ public class Profile extends AppCompatActivity {
 
         name.setEnabled(false);
         gender.setEnabled(false);
-        city.setEnabled(false);
         country.setEnabled(false);
         age.setEnabled(false);
+        email.setEnabled(false);
     }
 
     public void editable(View view) {
         name.setEnabled(true);
-        gender.setEnabled(true);
-        city.setEnabled(true);
-        country.setEnabled(true);
         age.setEnabled(true);
     }
 
