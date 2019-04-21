@@ -1,5 +1,6 @@
 package com.example.aser.gooddocter001;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,6 +11,7 @@ import android.app.TimePickerDialog;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -64,6 +66,17 @@ public class DetailActivity extends AppCompatActivity implements
         timeSlot.setAdapter(arrayAdapter);
         Intent intent=getIntent();
         key=intent.getStringExtra("key");
+        timeSlot.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Intent intent=new Intent(DetailActivity.this,Booking.class);
+                    intent.putExtra("dkey",key);
+                    intent.putExtra("time",timeSlotlList.get(position));
+                    startActivity(intent);
+
+                }
+        });
+
 
 
 
@@ -95,6 +108,7 @@ public class DetailActivity extends AppCompatActivity implements
                             mref.addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    timeSlotlList.clear();
 
 
                                         String title1 = dataSnapshot.child("slot1").getValue(String.class);
@@ -134,24 +148,6 @@ public class DetailActivity extends AppCompatActivity implements
 
 
     }
-//    ValueEventListener valueEventListener = new ValueEventListener() {
-//        @Override
-//        public void onDataChange(DataSnapshot dataSnapshot) {
-//            if (dataSnapshot.exists()) {
-//                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-//                    String data=dataSnapshot.getValue(String.class);
-//                    timeSlotlList.add(data);
-//
-//                }
-//                arrayAdapter.notifyDataSetChanged();
-//            }
-//        }
-//
-//        @Override
-//        public void onCancelled(DatabaseError databaseError) {
-//
-//        }
-//    };
 
 
 

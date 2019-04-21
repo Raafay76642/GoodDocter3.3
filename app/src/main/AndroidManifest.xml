@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -17,6 +17,7 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Booking"></activity>
         <activity android:name=".Profile" />
         <activity android:name=".Apntments" />
         <activity android:name=".MainActivity">
@@ -31,7 +32,7 @@
         <activity android:name=".ChooseSpeciality" />
         <activity android:name=".DoctersList" />
         <activity android:name=".DetailActivity" />
-        <activity android:name=".Calling"/>
+        <activity android:name=".Calling" />
     </application>
 
 </manifest>

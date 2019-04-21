@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Booking">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="Your appointment will be between "
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:layout_marginTop="50dp"
+            />
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="00:00 and 00:00"
+                android:textColor="@color/white"
+                android:textSize="28sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:id="@+id/show_time"
+                />
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:textColor="@color/white"
+                android:textSize="28sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_marginBottom="50dp"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
