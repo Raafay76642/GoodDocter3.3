@@ -1,8 +1,12 @@
 package com.example.aser.gooddocter001;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -42,9 +46,11 @@ public class Booking extends AppCompatActivity {
             Date date = sdf.parse(time);
             long curTimeInMs = date.getTime();
             Date afterAddingMins = new Date(curTimeInMs + (15 * ONE_MINUTE_IN_MILLIS));
+            String s=new SimpleDateFormat("kk:mm").format(afterAddingMins);
+            s+=" - "+time;
 //            text_time.setText(afterAddingMins.toString());
-            String mytime = java.text.DateFormat.getTimeInstance().format(afterAddingMins);
-            text_time.setText(mytime.toString());
+        //    String mytime = java.text.DateFormat.getTimeInstance().format(afterAddingMins);
+            text_time.setText(s);
 
 
         } catch (Exception e) {
@@ -52,7 +58,37 @@ public class Booking extends AppCompatActivity {
         }
 
 
+     Button button = (Button) findViewById(R.id.buttonShowCustomDialog);
 
+        // add button listener
+        button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                // custom dialog
+                final Dialog dialog = new Dialog(Booking.this);
+                dialog.setContentView(R.layout.dialouge_layout);
+                dialog.setTitle("Title...");
+
+                // set the custom dialog components - text, image and button
+                TextView text = (TextView) dialog.findViewById(R.id.text);
+                text.setText("Android custom dialog example!");
+                ImageView image = (ImageView) dialog.findViewById(R.id.image);
+                image.setImageResource(R.drawable.ic_home_black_24dp);
+
+                Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
+                // if button is clicked, close the custom dialog
+                dialogButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog.show();
+            }
+        });
 
 
     }
@@ -60,6 +96,12 @@ public class Booking extends AppCompatActivity {
         Intent intent=getIntent();
         time=intent.getStringExtra("time");
         dkey=intent.getStringExtra("dkey");
+
+    }
+    public void opendialouge()
+    {
+
+
 
     }
 }
