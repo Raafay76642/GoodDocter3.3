@@ -7,6 +7,30 @@ public class ProfileModel {
     String age;
     String id;
     String email;
+    String profilePic;
+
+    public ProfileModel() {
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    String role;
+
+    public String getProfilePic() {
+        return profilePic;
+    }
+
+    public void setProfilePic(String profilePic) {
+        this.profilePic = profilePic;
+    }
+
+
     public String getEmail() {
         return email;
     }
@@ -24,6 +48,16 @@ public class ProfileModel {
         this.age = age;
 
     }
+    public ProfileModel(String name, String gender, String country, String age, String profilePic,String email,String id) {
+        this.name = name;
+        this.gender = gender;
+        this.country = country;
+        this.age = age;
+        this.profilePic = profilePic;
+        this.email=email;
+        this.id=id;
+
+    }
 
 
 
@@ -34,6 +68,7 @@ public class ProfileModel {
         this.age = age;
         this.id = id;
         this.email=email;
+
 
     }
 

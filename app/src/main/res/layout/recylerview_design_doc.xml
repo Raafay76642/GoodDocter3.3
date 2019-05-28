@@ -11,8 +11,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:id="@+id/cardview"
-
-
         >
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,7 +28,7 @@
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="120dp"
-                android:src="@drawable/beat"/>
+                android:id="@+id/DocImg"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -68,22 +66,7 @@
         </LinearLayout>
 
         </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Hello"
-                    android:layout_marginHorizontal="15dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Available Today"
-                    android:layout_marginHorizontal="5dp"/>
 
-            </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

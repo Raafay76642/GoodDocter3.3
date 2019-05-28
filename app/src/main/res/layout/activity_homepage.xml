@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Welcome back"
+            android:text="Welcome back!"
             android:textSize="20sp"/>
         <TextView
             android:layout_width="match_parent"
@@ -43,19 +43,19 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:background="@drawable/rountcorner"
-            android:layout_margin="10dp"
-            android:onClick="openChooseSpeciality"
+            android:layout_height="70dp"
             android:layout_gravity="center"
-            >
+            android:layout_margin="10dp"
+            android:background="@drawable/rountcorner"
+            android:gravity="center"
+            android:onClick="openChooseSpeciality"
+            android:orientation="horizontal">
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:src="@drawable/doctor"
-                android:layout_weight="3"/>
+                android:layout_weight="3"
+                android:src="@drawable/doctor" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -63,14 +63,15 @@
                 android:layout_weight="2"
                 android:text="Choose Speciality"
                 android:textAllCaps="true"
+                android:textColor="@color/blue"
                 android:textSize="14sp"
-                android:textStyle="bold"
-                android:textColor="@color/blue"/>
+                android:textStyle="bold" />
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:src="@drawable/next"
-                android:layout_weight="3"/>
+                android:layout_weight="3"
+                android:src="@drawable/next" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -78,7 +79,8 @@
             android:orientation="horizontal"
             android:gravity="center"
             android:background="@drawable/rountcorner"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:onClick="openHealthD">
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -89,7 +91,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:text="Medical Record"
+                android:text="Health Details"
                 android:textAllCaps="true"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -109,16 +111,7 @@
             android:background="@drawable/rountcorner"
             android:textColor="@color/white"
             android:backgroundTint="@color/blue"/>
-        <Button
-            android:layout_marginTop="10dp"
-            android:onClick="openProfile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Edit Profile"
-            android:background="@drawable/rountcorner"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/blue"/>
+
     </LinearLayout>
 
     <android.support.design.widget.BottomNavigationView

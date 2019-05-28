@@ -17,7 +17,7 @@
         android:layout_marginTop="82dp"
         android:fontFamily="sans-serif-condensed-medium"
         android:gravity="center"
-        android:text="You Selected Date is"
+        android:text="Your Selected Date is"
         android:textAllCaps="true"
         android:textSize="30dp" />
 

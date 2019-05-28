@@ -49,7 +49,7 @@
             android:layout_marginRight="20dp"
             android:backgroundTint="@color/blue"
             android:hint="Full Name"
-            android:inputType="none|textPersonName"
+            android:inputType="textCapWords"
             android:textColorHint="@color/blue" />
 
         <LinearLayout
@@ -120,7 +120,7 @@
             android:layout_marginRight="20dp"
             android:backgroundTint="@color/blue"
             android:hint="Age"
-            android:inputType="text"
+            android:inputType="number"
             android:textColorHint="@color/blue" />
 
         <EditText

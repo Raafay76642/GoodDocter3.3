@@ -44,10 +44,8 @@ public class DetailActivity extends AppCompatActivity implements
     ListView timeSlot;
     DatabaseReference mref;
     String key;
-   private List<String> timeSlotlList;
+   public List<String> timeSlotlList;
   ArrayAdapter<String> arrayAdapter;
-    Query query;
-
 
 
     @Override
@@ -72,6 +70,7 @@ public class DetailActivity extends AppCompatActivity implements
                     Intent intent=new Intent(DetailActivity.this,Booking.class);
                     intent.putExtra("dkey",key);
                     intent.putExtra("time",timeSlotlList.get(position));
+                    intent.putExtra("date",date);
                     startActivity(intent);
 
                 }
@@ -109,23 +108,26 @@ public class DetailActivity extends AppCompatActivity implements
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     timeSlotlList.clear();
-
+                                    if (dataSnapshot.exists()) {
 
                                         String title1 = dataSnapshot.child("slot1").getValue(String.class);
                                         timeSlotlList.add(title1);
-                                    String title2 = dataSnapshot.child("slot2").getValue(String.class);
-                                    timeSlotlList.add(title2);
-                                    String title3 = dataSnapshot.child("slot3").getValue(String.class);
-                                    timeSlotlList.add(title3);
-                                    String title4 = dataSnapshot.child("slot4").getValue(String.class);
-                                    timeSlotlList.add(title4);
-                                    String title5 = dataSnapshot.child("slot5").getValue(String.class);
-                                    timeSlotlList.add(title5);
-
+                                        String title2 = dataSnapshot.child("slot2").getValue(String.class);
+                                        timeSlotlList.add(title2);
+                                        String title3 = dataSnapshot.child("slot3").getValue(String.class);
+                                        timeSlotlList.add(title3);
+                                        String title4 = dataSnapshot.child("slot4").getValue(String.class);
+                                        timeSlotlList.add(title4);
+                                        String title5 = dataSnapshot.child("slot5").getValue(String.class);
+                                        timeSlotlList.add(title5);
                                         arrayAdapter.notifyDataSetChanged();
 
-
-
+                                    }
+                                    else {
+                                        timeSlotlList.clear();
+                                        arrayAdapter.notifyDataSetChanged();
+                                        timeSlot.setEnabled(false);
+                                    }
 
 
                                 }

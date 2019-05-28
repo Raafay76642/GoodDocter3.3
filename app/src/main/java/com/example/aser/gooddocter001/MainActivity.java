@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void opensignup(View view)
     {
-        Intent intent = new Intent(this, SignUp.class);
+        Intent intent = new Intent(MainActivity.this, SignUp.class);
         startActivity(intent);
     }
     public void openHomePage()
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         //both the edit text are not empty
-        progressDialog.setMessage("loging in ...");
+        progressDialog.setMessage("logging in ...");
         progressDialog.show();
         firebaseAuth.signInWithEmailAndPassword(Email,Pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override

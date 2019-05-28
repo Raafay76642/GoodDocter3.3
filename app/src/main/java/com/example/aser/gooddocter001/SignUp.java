@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -29,9 +30,11 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
     private EditText editTextRePass;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
-    private FirebaseDatabase mdatabase;
-    private DatabaseReference mref;
+    private DatabaseReference databaseReference;
+
     String id;
+    final static int Gallery_Pick = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,10 +48,11 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         country=findViewById(R.id.country);
         gender=findViewById(R.id.gender);
         firebaseAuth = FirebaseAuth.getInstance();
-        mdatabase=FirebaseDatabase.getInstance();
-        mref=mdatabase.getReference().child("Users");
+
         progressDialog = new ProgressDialog(this);
     }
+
+
     public void opensignin(View view)
     {
         Intent intent = new Intent(this, MainActivity.class);
@@ -62,13 +66,13 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
     public void registerUser(View  view)
     {
-        String email = editTextEmail.getText().toString().trim();
-        String pass = editTextPass.getText().toString();
-        String repass = editTextRePass.getText().toString();
-        String Name = displayname.getText().toString();
-        String Gender = gender.getSelectedItem().toString();
-        String Country = country.getSelectedItem().toString();
-        String Age=s_age.getText().toString();
+       final String email = editTextEmail.getText().toString().trim();
+       final String pass = editTextPass.getText().toString();
+       final String repass = editTextRePass.getText().toString();
+       final String Name = displayname.getText().toString();
+       final String Gender = gender.getSelectedItem().toString();
+       final String Country = country.getSelectedItem().toString();
+       final String Age=s_age.getText().toString();
         if(TextUtils.isEmpty(Name))
         {
             //email is empty
@@ -108,21 +112,24 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         //checking if success
                         if(task.isSuccessful()){
+
                             id=FirebaseAuth.getInstance().getCurrentUser().getUid();
-
-                            //display some message here
-                            ProfileModel profileModel =new ProfileModel(Name,Gender,Country,Age,id,email);
-                            mref.child(id).setValue(profileModel);
+                            databaseReference=FirebaseDatabase.getInstance().getReference();
+//                            display some message here
+        ProfileModel profileModel =new ProfileModel(Name,Gender,Country,Age,id,email);
+                            databaseReference.child("Users").child(id).setValue(profileModel);
+                            databaseReference.child("Users").child(id).child("role").setValue("user");
                             Toast.makeText(SignUp.this,"Successfully registered",Toast.LENGTH_LONG).show();
-                            finish();
-                            opensignin();
 
 
-                        }else{
+                        }
+                        else{
                             //display some message here
                             Toast.makeText(SignUp.this,"Registration Error",Toast.LENGTH_LONG).show();
                         }
                         progressDialog.dismiss();
+                        finish();
+                        opensignin();
 
 
 

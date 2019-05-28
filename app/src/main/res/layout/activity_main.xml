@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.aser.gooddocter001.MainActivity"
-    android:background="#ffff"
+    android:background="@color/white"
     android:orientation="vertical">
 
 <LinearLayout
@@ -24,7 +24,7 @@
         android:id="@+id/heading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Good Docter"
+        android:text="Good Doctor"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@android:color/background_light"
@@ -101,10 +101,6 @@
         android:layout_marginTop="20dp"
         >
 
-        <Button
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/google" />
 
 
     </LinearLayout>

@@ -8,7 +8,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -34,7 +37,8 @@ public class DoctorsAdapter extends RecyclerView.Adapter<DoctorsAdapter.DoctorsV
         holder.textViewName.setText(doctorModel.name);
         holder.textViewDep.setText( doctorModel.department);
         holder.textViewAge.setText( doctorModel.age);
-        holder.textViewFee.setText( doctorModel.fee);
+        holder.textViewFee.setText( doctorModel.fee+" INR");
+        Glide.with(mCtx).load(doctorModel.getProfilePic()).fitCenter().into(holder.DocImg);
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,6 +66,7 @@ public class DoctorsAdapter extends RecyclerView.Adapter<DoctorsAdapter.DoctorsV
         public class DoctorsViewHolder extends RecyclerView.ViewHolder {
             TextView textViewName, textViewDep, textViewAge, textViewFee;
             CardView cardView;
+            ImageView DocImg;
             public DoctorsViewHolder(@NonNull View itemView) {
                 super(itemView);
                 textViewName = itemView.findViewById(R.id.text_view_name);
@@ -69,6 +74,7 @@ public class DoctorsAdapter extends RecyclerView.Adapter<DoctorsAdapter.DoctorsV
                 textViewAge = itemView.findViewById(R.id.text_view_age);
                 textViewFee = itemView.findViewById(R.id.text_fee);
                 cardView=itemView.findViewById(R.id.cardview);
+                DocImg=itemView.findViewById(R.id.DocImg);
             }
         }
     }

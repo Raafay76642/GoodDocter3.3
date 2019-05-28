@@ -16,6 +16,16 @@ public class Doctor_Model {
         String s5;
         String date;
 
+    public String getProfilePic() {
+        return profilePic;
+    }
+
+    public void setProfilePic(String profilePic) {
+        this.profilePic = profilePic;
+    }
+
+    String profilePic;
+
     public String getDate() {
         return date;
     }

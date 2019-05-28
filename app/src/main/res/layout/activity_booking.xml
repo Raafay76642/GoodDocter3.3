@@ -43,6 +43,7 @@
                 android:textSize="28sp"
                 android:gravity="center"
                 android:textStyle="bold"
+                android:id="@+id/show_date"
                 android:layout_marginBottom="50dp"
                 />
 
@@ -55,7 +56,7 @@
         android:layout_marginRight="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Your Appointments duration will be for 20 minutes while your answer Doctor's Call press continue for payment."
+        android:text="Your Appointments duration will be for 15 minutes while your answer Doctor's Call press continue for payment."
         android:textSize="18sp" />
     <Button
         android:layout_width="match_parent"
